@@ -1,3 +1,22 @@
+<?php 
+$hide="";
+session_start();
+include("connection.php");
+	include("functions.php");
+  $user_data = check_login($con);
+
+
+	if(isset($_SESSION['user_id'])){
+    $id = $_SESSION['user_id'];
+    if($_SESSION['user_id'] == "711828"){
+      $hide="";
+    }
+    else{
+      $hide="hide";
+    }
+  }
+
+		?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -27,12 +46,12 @@
           <div class="btn">
             <i class="fas fa-times close-btn"></i>
           </div>
-          <a href="Ballina.html">Ballina</a>
-          <a href="">Dhuruuesit</a>
-          <a href="">Kerkuesit</a>
-          <a href="">kontakti</a>
-        <a href="" class="">Dashboard  </a>
-                <a href="">Logout</a>
+          <a href="Ballina.php">Ballina</a>
+          <a href="dhuruesit.php">Dhuruuesit</a>
+          <a href="kerkuesit.php">Kerkuesit</a>
+          <a href="kontakti.php">kontakti</a>
+        <a href="Dashboard.php" class="<?php echo $hide ?>">Dashboard  </a>
+                <a href="logout.php">Logout</a>
         </div>
         <div class="btn">
           <i class="fas fa-bars menu-btn"></i>
